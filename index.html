@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday Ms. Gem 💎</title>
+
+    <meta name="description" content="A special birthday surprise for Ms. Gem 💎">
+
+    <link rel="stylesheet" href="./src/css/output.css">
+</head>
+
+<body class="bg-slate-950 text-white overflow-x-hidden">
+
+    <!-- Cursor Glow -->
+    <div id="cursor-glow"></div>
+
+    <!-- Particles -->
+    <div id="particles"></div>
+
+    <!-- Music -->
+    <audio id="birthdayMusic" preload="auto">
+        <source src="./public/music/birthday.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Loader -->
+    <div id="loader" class="fixed inset-0 z-[9999] bg-slate-950 flex flex-col items-center justify-center">
+
+        <div class="w-20 h-20 border-4 border-cyan-400 border-t-transparent rounded-full animate-spin">
+        </div>
+
+        <p class="mt-5 text-cyan-300 text-lg">
+            Preparing Something Special...
+        </p>
+
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content" class="hidden">
+
+        <!-- NAVBAR -->
+
+        <nav id="navbar" class="hidden fixed top-6 inset-x-0 z-50 flex justify-center px-6">
+
+            <div class="glass rounded-full border border-white/10 px-8 py-4 w-full max-w-6xl">
+                <div class="grid grid-cols-[auto_1fr_auto] items-center gap-10">
+
+                    <!-- Logo -->
+
+                    <div class="flex items-center gap-3">
+
+                        <div class="w-12 h-12 rounded-full bg-cyan-400/20 flex items-center justify-center text-lg">
+
+                            💎
+
+                        </div>
+
+                        <div>
+
+                            <h3 class="font-bold text-lg leading-none">
+
+                                Ms. Gem
+
+                            </h3>
+
+                            <p class="text-xs text-slate-400">
+
+                                Birthday Edition
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Center Links -->
+
+                    <div class="flex justify-center items-center gap-10">
+
+                        <a href="#hero-section" class="text-slate-300 hover:text-cyan-300 transition">
+
+                            Home
+
+                        </a>
+
+                        <a href="#gallery-section" class="text-slate-300 hover:text-cyan-300 transition">
+
+                            Memories
+
+                        </a>
+
+                        <a href="#letter-section" class="text-slate-300 hover:text-cyan-300 transition">
+
+                            Letter
+
+                        </a>
+
+                        <a href="#final-section" class="text-slate-300 hover:text-cyan-300 transition">
+
+                            Wishes
+
+                        </a>
+
+                    </div>
+
+                    <!-- Music -->
+
+                    <div class="flex justify-end">
+
+                        <button id="musicToggle"
+                            class="cursor-pointer px-6 py-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition">
+
+                            🎹 Music
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+        <!-- ================================= -->
+        <!-- PORTAL -->
+        <!-- ================================= -->
+
+        <section id="portal-section" class="relative min-h-screen flex items-center justify-center px-6">
+
+            <!-- Background Glow -->
+
+            <div class="absolute top-20 left-20 w-80 h-80 bg-cyan-500/20 blur-[180px] rounded-full">
+            </div>
+
+            <div class="absolute bottom-20 right-20 w-80 h-80 bg-sky-500/20 blur-[180px] rounded-full">
+            </div>
+
+            <!-- Portal Card -->
+
+            <div
+                class="relative z-10 max-w-xl w-full backdrop-blur-xl bg-white/5 border border-white/10 rounded-[32px] p-10 text-center">
+
+                <div class="text-7xl mb-6 floating">
+                    💎
+                </div>
+
+                <h1 class="text-4xl md:text-5xl font-black leading-tight">
+
+                    A Secret Birthday Surprise
+
+                </h1>
+
+                <p class="mt-4 text-slate-300">
+
+                    Only one special person can unlock
+                    what's hidden behind this portal.
+
+                </p>
+
+                <input id="nameInput" type="text" placeholder="Enter Your Name"
+                    class="mt-8 w-full px-5 py-4 rounded-2xl bg-white/10 border border-white/10 outline-none focus:border-cyan-400 text-center">
+
+                <button id="unlockBtn"
+                    class="cursor-pointer mt-6 w-full py-4 rounded-2xl bg-cyan-500 hover:bg-cyan-400 transition-all duration-300 text-slate-950 font-bold">
+
+                    Unlock Surprise 🎁
+
+                </button>
+
+                <p id="errorText" class="hidden mt-4 text-rose-400">
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- ================================= -->
+        <!-- GIFT SCREEN -->
+        <!-- ================================= -->
+
+        <section id="gift-section"
+            class="hidden min-h-screen flex flex-col items-center justify-center text-center px-6">
+
+            <div id="giftBox" class="cursor-pointer hover:scale-110 transition-all duration-500">
+
+                <div class="text-[10rem]">
+                    🎁
+                </div>
+
+            </div>
+
+            <h2 class="text-4xl md:text-5xl font-black">
+
+                A Special Gift Awaits...
+
+            </h2>
+
+            <p class="mt-4 text-slate-300">
+
+                Click the gift box to open your surprise.
+
+            </p>
+
+        </section>
+
+        <!-- ================================= -->
+        <!-- HERO -->
+        <!-- ================================= -->
+
+        <section id="hero-section" class="hidden relative h-screen flex items-center px-6 overflow-hidden pt-[130px]">
+
+            <!-- Background Glow -->
+
+            <div class="absolute top-20 left-20 w-96 h-96 bg-cyan-500/15 blur-[180px] rounded-full">
+            </div>
+
+            <div class="absolute bottom-20 right-20 w-96 h-96 bg-sky-500/15 blur-[180px] rounded-full">
+            </div>
+
+            <div class="relative z-10 max-w-6xl mx-auto w-full">
+
+                <div class="grid lg:grid-cols-2 gap-10 items-center">
+
+                    <!-- LEFT -->
+
+                    <div>
+
+                        <div class="inline-flex items-center gap-2 glass px-4 py-2 rounded-full">
+
+                            <span class="text-cyan-300">
+                                🎉
+                            </span>
+
+                            <span class="text-sm text-cyan-300 tracking-[2px] uppercase">
+
+                                Birthday Celebration
+
+                            </span>
+
+                        </div>
+
+                        <h1 class="mt-6 text-5xl md:text-6xl font-black leading-none">
+
+                            Happy Birthday
+
+                            <span class="block gradient-text mt-3">
+
+                                Ms. Gem 💎
+
+                            </span>
+
+                        </h1>
+
+                        <p class="mt-5 text-lg text-slate-300 leading-relaxed max-w-xl">
+
+                            Today is all about celebrating
+                            the amazing person behind the smile,
+                            the creativity and the beautiful memories.
+
+                            <br><br>
+
+                            Wishing you a year filled with happiness,
+                            success and unforgettable moments.
+
+                        </p>
+
+                        <div class="flex flex-wrap gap-4 mt-10">
+
+                            <button id="startJourney" class="cursor-pointer btn-primary px-8 py-4 rounded-full">
+
+                                Explore Memories ✨
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- RIGHT -->
+
+                    <div class="flex justify-center">
+
+                        <div class="relative w-[500px] h-[500px]">
+
+                            <!-- Glow -->
+
+                            <div class="absolute inset-0 bg-cyan-400/20 blur-[120px] rounded-full">
+                            </div>
+
+                            <!-- Glass Square -->
+
+                            <div class="absolute inset-8 glass rounded-[40px]">
+                            </div>
+
+                            <!-- Ring -->
+
+                            <div class="hero-ring">
+                            </div>
+
+                            <!-- Diamond -->
+
+                            <div class="hero-shape shape-one">
+                                💎
+                            </div>
+
+                            <!-- Star -->
+
+                            <div class="hero-shape shape-two">
+                                ✦
+                            </div>
+
+                            <!-- Photo -->
+
+                            <img src="./public/images/profile.jpg" alt="Ms Gem"
+                                class="hero-photo absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+
+                            <!-- Birthday Badge -->
+
+                            <div class="absolute bottom-6 left-0 glass px-5 py-4 rounded-2xl">
+
+                                <p class="text-xs uppercase tracking-[2px] text-slate-400">
+                                    Special Day
+                                </p>
+
+                                <p class="font-semibold text-cyan-300">
+                                    Birthday 🎂
+                                </p>
+
+                            </div>
+
+                            <!-- Name Badge -->
+
+                            <div class="absolute top-6 right-0 glass px-5 py-4 rounded-2xl">
+
+                                <p class="text-xs uppercase tracking-[2px] text-slate-400">
+                                    Known As
+                                </p>
+
+                                <p class="font-semibold">
+                                    Ms. Gem 💎
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+        <!-- ================================= -->
+        <!-- MEMORY WALL -->
+        <!-- ================================= -->
+
+        <section id="gallery-section" class="relative py-32 px-6 overflow-hidden">
+
+            <!-- Background Glow -->
+
+            <div class="absolute top-0 left-0 w-96 h-96 bg-cyan-500/10 blur-[180px] rounded-full">
+            </div>
+
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-sky-500/10 blur-[180px] rounded-full">
+            </div>
+
+            <div class="relative z-10 max-w-7xl mx-auto">
+
+                <!-- Heading -->
+
+                <div class="text-center">
+
+                    <div class="inline-flex items-center gap-2 glass px-5 py-2 rounded-full">
+
+                        <span>📸</span>
+
+                        <span class="uppercase tracking-[3px] text-cyan-300 text-sm">
+
+                            Memory Wall
+
+                        </span>
+
+                    </div>
+
+                    <h2 class="mt-6 text-5xl md:text-6xl font-black">
+
+                        Beautiful
+
+                        <span class="gradient-text">
+
+                            Memories
+
+                        </span>
+
+                    </h2>
+
+                    <p class="mt-5 text-slate-400 max-w-2xl mx-auto text-lg">
+
+                        Every picture tells a story.
+                        Every memory holds a smile.
+                        Every moment becomes priceless.
+
+                    </p>
+
+                </div>
+
+                <!-- Gallery Grid -->
+
+                <div class="mt-20 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- Card 1 -->
+
+                    <div class="memory-card group glass rounded-[30px] overflow-hidden">
+
+                        <div class="overflow-hidden">
+
+                            <img src="/public/images/memory1.webp" alt="Memory"
+                                class="w-full h-[420px] object-cover transition duration-700 group-hover:scale-110">
+
+                        </div>
+
+                        <div class="p-6">
+
+                            <h3 class="text-xl font-semibold">
+
+                                ✨ The Smile That Lights Everything
+
+                            </h3>
+
+                            <p class="mt-3 text-slate-400">
+
+                                Some smiles stay in memories forever.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Card 2 -->
+
+                    <div class="memory-card group glass rounded-[30px] overflow-hidden">
+
+                        <div class="overflow-hidden">
+
+                            <img src="/public/images/memory2.webp" alt="Memory"
+                                class="w-full h-[420px] object-cover transition duration-700 group-hover:scale-110">
+
+                        </div>
+
+                        <div class="p-6">
+
+                            <h3 class="text-xl font-semibold">
+
+                                💙 A Moment Worth Keeping
+
+                            </h3>
+
+                            <p class="mt-3 text-slate-400">
+
+                                Some memories become treasures.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Card 3 -->
+
+                    <div class="memory-card group glass rounded-[30px] overflow-hidden">
+
+                        <div class="overflow-hidden">
+
+                            <img src="/public/images/memory3.webp" alt="Memory"
+                                class="w-full h-[420px] object-cover transition duration-700 group-hover:scale-110">
+
+                        </div>
+
+                        <div class="p-6">
+
+                            <h3 class="text-xl font-semibold">
+
+                                🎂 Another Beautiful Chapter
+
+                            </h3>
+
+                            <p class="mt-3 text-slate-400">
+
+                                Growing, glowing and inspiring.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Card 4 -->
+
+                    <div class="memory-card group glass rounded-[30px] overflow-hidden">
+
+                        <div class="overflow-hidden">
+
+                            <img src="/public/images/memory4.webp" alt="Memory"
+                                class="w-full h-[420px] object-cover transition duration-700 group-hover:scale-110">
+
+                        </div>
+
+                        <div class="p-6">
+
+                            <h3 class="text-xl font-semibold">
+
+                                🌸 Happiness In Every Frame
+
+                            </h3>
+
+                            <p class="mt-3 text-slate-400">
+
+                                The little moments matter most.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Card 5 -->
+
+                    <div class="memory-card group glass rounded-[30px] overflow-hidden">
+
+                        <div class="overflow-hidden">
+
+                            <img src="/public/images/memory5.webp" alt="Memory"
+                                class="w-full h-[420px] object-cover transition duration-700 group-hover:scale-110">
+
+                        </div>
+
+                        <div class="p-6">
+
+                            <h3 class="text-xl font-semibold">
+
+                                💎 Pure Elegance
+
+                            </h3>
+
+                            <p class="mt-3 text-slate-400">
+
+                                Beautiful inside and out.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Card 6 -->
+
+                    <div class="memory-card group glass rounded-[30px] overflow-hidden">
+
+                        <div class="overflow-hidden">
+
+                            <img src="/public/images/memory6.webp" alt="Memory"
+                                class="w-full h-[420px] object-cover transition duration-700 group-hover:scale-110">
+
+                        </div>
+
+                        <div class="p-6">
+
+                            <h3 class="text-xl font-semibold">
+
+                                🎉 Birthday Magic
+
+                            </h3>
+
+                            <p class="mt-3 text-slate-400">
+
+                                Celebrating a truly special person.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+        <!-- ================================= -->
+        <!-- LETTER SECTION -->
+        <!-- ================================= -->
+
+        <section id="letter-section" class="relative py-32 px-6 overflow-hidden">
+
+            <!-- Background Glows -->
+
+            <div class="absolute top-20 left-0 w-[500px] h-[500px] bg-cyan-500/10 blur-[220px] rounded-full">
+            </div>
+
+            <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-sky-500/10 blur-[220px] rounded-full">
+            </div>
+
+            <div class="relative z-10 max-w-5xl mx-auto">
+
+                <!-- Section Header -->
+
+                <div class="text-center">
+
+                    <div class="inline-flex items-center gap-2 glass px-5 py-2 rounded-full">
+
+                        <span>💌</span>
+
+                        <span class="uppercase tracking-[3px] text-cyan-300 text-sm">
+
+                            Special Letter
+
+                        </span>
+
+                    </div>
+
+                    <h2 class="mt-6 text-5xl md:text-6xl font-black">
+
+                        A Message From The
+
+                        <span class="gradient-text">
+
+                            Heart
+
+                        </span>
+
+                    </h2>
+
+                </div>
+
+                <!-- Letter Card -->
+
+                <div class="letter-card glass mt-16 p-10 md:p-14 rounded-[40px] relative overflow-hidden">
+
+                    <!-- Decorative Quotes -->
+
+                    <div class="absolute top-6 left-8 text-[7rem] text-cyan-400/10 font-black select-none">
+
+                        “
+
+                    </div>
+
+                    <div class="absolute bottom-0 right-10 text-[7rem] text-cyan-400/10 font-black select-none">
+
+                        ”
+
+                    </div>
+
+                    <!-- Floating Hearts -->
+
+                    <div class="letter-heart heart-1">
+                        💙
+                    </div>
+
+                    <div class="letter-heart heart-2">
+                        ✨
+                    </div>
+
+                    <div class="letter-heart heart-3">
+                        💎
+                    </div>
+
+                    <!-- Letter Content -->
+
+                    <div class="relative z-10">
+
+                        <p class="text-cyan-300 text-lg font-semibold">
+
+                            Dear Ms. Gem 💎,
+
+                        </p>
+
+                        <div class="mt-8 space-y-6 text-slate-300 text-lg leading-relaxed">
+
+                            <p>
+                                Today is not just another date on the calendar.
+                                It is a celebration of a wonderful person who
+                                brings warmth, positivity and happiness
+                                wherever she goes.
+                            </p>
+
+                            <p>
+                                Every smile you share,
+                                every memory you create,
+                                and every moment of kindness
+                                leaves a beautiful mark on the people around you.
+                            </p>
+
+                            <p>
+                                Life becomes more meaningful because of
+                                people who make ordinary days feel special,
+                                and you are undoubtedly one of them.
+                            </p>
+
+                            <p>
+                                May this birthday open the doors to
+                                new opportunities,
+                                unforgettable adventures,
+                                endless laughter,
+                                and dreams that come true.
+                            </p>
+
+                            <p>
+                                May your smile shine brighter than ever,
+                                your heart stay full of happiness,
+                                and your future be as beautiful as the memories
+                                you've created along the way.
+                            </p>
+
+                            <p class="text-cyan-300 font-medium">
+                                Happy Birthday, Ms. Gem 🎂✨
+                            </p>
+
+                        </div>
+
+                        <!-- Signature -->
+
+                        <div class="mt-12">
+
+                            <p class="text-slate-400">
+
+                                With Best Wishes,
+
+                            </p>
+
+                            <h3 class="text-3xl font-bold gradient-text mt-2">
+
+                                Dev
+
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================================= -->
+        <!-- WHY YOU'RE SPECIAL -->
+        <!-- ================================= -->
+
+        <section id="special-section" class="relative py-32 px-6 overflow-hidden">
+
+            <!-- Background Glow -->
+
+            <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-cyan-500/10 blur-[220px] rounded-full">
+            </div>
+
+            <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-sky-500/10 blur-[220px] rounded-full">
+            </div>
+
+            <div class="relative z-10 max-w-7xl mx-auto">
+
+                <!-- Header -->
+
+                <div class="text-center">
+
+                    <div class="inline-flex items-center gap-2 glass px-5 py-2 rounded-full">
+
+                        <span>✨</span>
+
+                        <span class="uppercase tracking-[3px] text-cyan-300 text-sm">
+
+                            Appreciation
+
+                        </span>
+
+                    </div>
+
+                    <h2 class="mt-6 text-5xl md:text-6xl font-black">
+
+                        Why You're
+
+                        <span class="gradient-text">
+
+                            Special
+
+                        </span>
+
+                    </h2>
+
+                    <p class="mt-5 text-slate-400 max-w-2xl mx-auto text-lg">
+
+                        Some people leave a lasting impact simply by being themselves.
+                        Here are a few reasons why today feels so special.
+
+                    </p>
+
+                </div>
+
+                <!-- Cards -->
+
+                <div class="mt-20 grid md:grid-cols-2 gap-8">
+
+                    <!-- Card 1 -->
+
+                    <div class="special-card glass rounded-[32px] p-8">
+
+                        <div class="special-icon">
+                            💎
+                        </div>
+
+                        <h3 class="mt-6 text-2xl font-bold">
+
+                            Kind Heart
+
+                        </h3>
+
+                        <p class="mt-4 text-slate-400 leading-relaxed">
+
+                            A beautiful heart that spreads positivity,
+                            kindness and warmth wherever it goes.
+
+                        </p>
+
+                    </div>
+
+                    <!-- Card 2 -->
+
+                    <div class="special-card glass rounded-[32px] p-8">
+
+                        <div class="special-icon">
+                            🌸
+                        </div>
+
+                        <h3 class="mt-6 text-2xl font-bold">
+
+                            Positive Energy
+
+                        </h3>
+
+                        <p class="mt-4 text-slate-400 leading-relaxed">
+
+                            The kind of energy that turns ordinary moments
+                            into memorable ones.
+
+                        </p>
+
+                    </div>
+
+                    <!-- Card 3 -->
+
+                    <div class="special-card glass rounded-[32px] p-8">
+
+                        <div class="special-icon">
+                            ✨
+                        </div>
+
+                        <h3 class="mt-6 text-2xl font-bold">
+
+                            Creativity
+
+                        </h3>
+
+                        <p class="mt-4 text-slate-400 leading-relaxed">
+
+                            Full of ideas, imagination and the ability
+                            to make things uniquely beautiful.
+
+                        </p>
+
+                    </div>
+
+                    <!-- Card 4 -->
+
+                    <div class="special-card glass rounded-[32px] p-8">
+
+                        <div class="special-icon">
+                            🎂
+                        </div>
+
+                        <h3 class="mt-6 text-2xl font-bold">
+
+                            One Of A Kind
+
+                        </h3>
+
+                        <p class="mt-4 text-slate-400 leading-relaxed">
+
+                            There is only one Ms. Gem,
+                            and that's exactly what makes today worth celebrating.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Bottom Quote -->
+
+                <div class="mt-20 text-center">
+
+                    <div class="glass rounded-[32px] px-10 py-8 inline-block">
+
+                        <p class="text-xl md:text-2xl text-slate-300 italic">
+
+                            "Some people make the world brighter simply by being in it."
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================================= -->
+        <!-- FINAL CELEBRATION -->
+        <!-- ================================= -->
+
+        <section id="final-section"
+            class="relative min-h-screen flex items-center justify-center px-6 py-32 overflow-hidden">
+
+            <!-- Background Glow -->
+
+            <div class="absolute top-0 left-0 w-[600px] h-[600px] bg-cyan-500/10 blur-[250px] rounded-full">
+            </div>
+
+            <div class="absolute bottom-0 right-0 w-[600px] h-[600px] bg-sky-500/10 blur-[250px] rounded-full">
+            </div>
+
+            <!-- Floating Elements -->
+
+            <div class="celebrate-float float-1">🎂</div>
+            <div class="celebrate-float float-2">💎</div>
+            <div class="celebrate-float float-3">✨</div>
+            <div class="celebrate-float float-4">🎉</div>
+            <div class="celebrate-float float-5">🌸</div>
+
+            <div class="relative z-10 max-w-5xl mx-auto text-center">
+
+                <!-- Small Badge -->
+
+                <div class="inline-flex items-center gap-2 glass px-5 py-2 rounded-full">
+
+                    <span>🎉</span>
+
+                    <span class="uppercase tracking-[3px] text-cyan-300 text-sm">
+
+                        Final Wishes
+
+                    </span>
+
+                </div>
+
+                <!-- Main Heading -->
+
+                <h2 class="mt-8 text-6xl md:text-8xl font-black leading-none">
+
+                    Happy Birthday
+
+                    <span class="block gradient-text mt-4">
+
+                        Ms. Gem 💎
+
+                    </span>
+
+                </h2>
+
+                <!-- Message -->
+
+                <div class="glass mt-14 p-10 md:p-14 rounded-[40px]">
+
+                    <p class="text-lg md:text-xl text-slate-300 leading-relaxed">
+
+                        Another year.
+                        Another beautiful chapter.
+
+                        <br><br>
+
+                        May your days be filled with happiness,
+                        your heart be filled with peace,
+                        and your future be filled with opportunities
+                        beyond your imagination.
+
+                        <br><br>
+
+                        May every goal you chase find success.
+
+                        <br>
+
+                        May every dream you carry find its way
+                        into reality.
+
+                        <br><br>
+
+                        Keep smiling.
+
+                        <br>
+
+                        Keep creating.
+
+                        <br>
+
+                        Keep inspiring.
+
+                        <br><br>
+
+                        And most importantly,
+                        never stop being the amazing person
+                        that makes today worth celebrating.
+
+                        <br><br>
+
+                        <span class="text-cyan-300 font-semibold">
+
+                            Wishing you endless happiness,
+                            unforgettable memories,
+                            and a truly wonderful year ahead.
+
+                        </span>
+
+                    </p>
+
+                </div>
+
+                <!-- Celebration Button -->
+
+                <button id="celebrateBtn" class="cursor-pointer btn-primary mt-12 px-10 py-5 rounded-full text-lg">
+
+                    🎉 Celebrate Your Day
+
+                </button>
+
+                <!-- Hidden Celebration Message -->
+
+                <div id="celebrationMessage" class="hidden mt-12">
+
+                    <div class="glass p-8 rounded-[30px]">
+
+                        <h3 class="text-3xl font-bold gradient-text">
+
+                            You Deserve The Best 💙
+
+                        </h3>
+
+                        <p class="mt-4 text-slate-300">
+
+                            Thank you for being you.
+
+                            <br>
+
+                            Happy Birthday, Ms. Gem 🎂✨
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Signature -->
+
+                <div class="mt-20">
+
+                    <p class="text-slate-500 text-sm uppercase tracking-[4px]">
+
+                        Made With 💙 By
+
+                    </p>
+
+                    <h3 class="mt-3 text-4xl font-black gradient-text">
+
+                        Dev
+
+                    </h3>
+
+                    <p class="mt-3 text-slate-500">
+
+                        Birthday Edition 2026
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="./src/js/main.js"></script>
+
+</body>
+
+</html>
